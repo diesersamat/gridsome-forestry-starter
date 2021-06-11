@@ -40,14 +40,24 @@ jobs:
       - name: Build Gridsome
         run: gridsome build
         
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+#       - name: Sync files
+#         uses: SamKirkland/FTP-Deploy-Action@4.0.0
+#         with:
+#           server: ftp.tilje.games
+#           username: ${{ secrets.FTP_NAME }}
+#           password: ${{ secrets.FTP_PASSWORD }}
+#           port: 22
+#           protocol: ftps
+#           local-dir: ./dist/
+#           server-dir: /home/a0446608/domains/tilje.games/public_html/
+#           log-level: verbose
+          
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ftp.tilje.games
-          username: ${{ secrets.FTP_NAME }}
+          host: ftp.tilje.games
+          user: ${{ secrets.FTP_NAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          protocol: ftps
-          local-dir: ./dist/
-          server-dir: /home/a0446608/domains/tilje.games/public_html/
-          log-level: verbose
+          localDir: "dist"
+          remoteDir: "home/a0446608/domains/tilje.games/public_html"
+          options: "--delete --asci"
