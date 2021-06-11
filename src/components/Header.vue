@@ -4,15 +4,15 @@
             <div class="left">
                 <g-link :to="{ name: 'home' }" class="home-link">
                     <img 
-                        src="../../static/logo.svg"
+                        src="../../static/logo.png"
                         :alt="settings.site_name" 
                         class="logo"
                     />
                 </g-link>
             </div>
             <nav class="nav right">
-                <g-link class="nav__link" to="/journal">Journal</g-link>
-                <g-link class="nav__link" to="/contact">Say Hi!</g-link>
+                <g-link class="nav__link" to="/">How The Forest Was Born</g-link>
+                <g-link class="nav__link" to="/about-us">About Us</g-link>
             </nav>
         </div>
     </header>
@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-        logo: require("../../static/logo.svg"),
+        logo: require("../../static/logo.png"),
         settings: require("../../data/theme.json")
     }
   }

@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <div class="container">
-      <Hero/>
       <div v-html="$page.post.content" class="content" />
     </div>
   </Layout>
@@ -21,12 +20,7 @@ query ProjectPost {
 </page-query>
 
 <script>
-import Hero from "@/components/Hero"
-
 export default {
-  components: {
-    Hero
-  },
   metaInfo () {
     return {
       title: this.$page.post.title,
