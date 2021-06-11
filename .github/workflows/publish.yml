@@ -58,4 +58,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "dist"
           remoteDir: "domains/tilje.games/public_html"
-          options: "--delete --asci"
+#           options: "--delete --asci"
