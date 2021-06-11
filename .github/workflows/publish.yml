@@ -39,3 +39,13 @@ jobs:
 
       - name: Build Gridsome
         run: gridsome build
+        
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ftp.tilje.games
+          username: ${{ secrets.FTP_NAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          local-dir: ./dist/
+          server-dir: /home/a0446608/domains/tilje.games/public_html/
