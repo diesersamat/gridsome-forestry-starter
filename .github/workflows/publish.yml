@@ -50,3 +50,4 @@ jobs:
           protocol: ftps
           local-dir: ./dist/
           server-dir: /home/a0446608/domains/tilje.games/public_html/
+          security: loose
