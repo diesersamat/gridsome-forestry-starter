@@ -1,47 +1,66 @@
-<p align="center">
-  <img src="https://file-xidfrcjkaq.now.sh/" height="240">
-  <h3 align="center">Gridsome x Forestry</h3>
-  <p align="center">A starter-kit by Nichlas W. Andersen<p>
-</p>
+# Portfolio theme for Gatsby
 
-<p align="center">
-  <a href="https://app.netlify.com/sites/gridsome-forestry/deploys"><img src="https://api.netlify.com/api/v1/badges/21965bf1-8f46-4201-afe9-98896cba865e/deploy-status" alt="Netlify Status"></a>
-</p>
+### Gatsby starter theme integrated with [Contentful](https://www.contentful.com)
 
+## Demo
 
-## Development
+Live demo is available at:
+https://gatsby-contentful-portfolio.netlify.com/
 
-```bash
-# install Gridsome globally
-npm install --global @gridsome/cli
+## Screenshot
 
-# cd into the project directory
-cd gridsome-forestry-starter
+![The home page](screenshot.png?raw=true)
 
-# install dependencies
-npm install
+## Who is this for?
 
-# Start local dev server
-npm run develop
+- Graphic designers
+- Photographers
+- Illustrators
+- Other creatives
+
+## Features
+
+- Integration with [Contentful](https://www.contentful.com) - automated content model & demo setup
+- Responsive/adaptive images via [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/)
+- Uses utility-first [TailwindCSS](https://tailwindcss.com/) framework
+- Integration with [Mailchimp](https://mailchimp.com/) - newsletter form
+- Responsive design (desktop / mobile)
+
+## Getting started
+
+Install [Node package manager (NPM)](https://nodejs.org/) (if you haven't already).
+
+## Requirements
+
+To use this project you have to have a Contentful account. If you don't have one yet you can register at [www.contentful.com/sign-up](https://www.contentful.com/sign-up/).
+
+### Get the source code and install dependencies.
+
+```
+$ git clone git@github.com:wkocjan/gatsby-contentful-portfolio.git
+$ npm install
 ```
 
+### Set up of the needed content model and create a configuration file
 
-## Forestry (Content Management)
+This project comes with a Contentful setup command `npm run setup`.
 
-This project has been pre-configured to work with Forestry, just import your repository ✨  
-Any changes you make will be commited back to the repo, and deployed if you're using Netlify.
+This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`.env`).
 
-<p>
-  <a href="https://app.forestry.io/quick-start?repo=itsnwa/gridsome-forestry-starter&amp;provider=github&amp;engine=vuepress" rel="nofollow"><img src="https://camo.githubusercontent.com/2455e97e4e989374a355fb0bea7ad364f2561c92/68747470733a2f2f6173736574732e666f7265737472792e696f2f696d706f72742d746f2d666f7265737472794b2e737667" alt="Import this project into Forestry" data-canonical-src="https://assets.forestry.io/import-to-forestryK.svg" style="max-width:100%;"></a>
-</p>
+### Set up Mailchimp
 
+If you want to use built-in integration with Mailchimp, please provide your unique endpoind URL in the `.env` file (`MAILCHIMP_ENDPOINT` variable).
 
-## Deploy with Netlify
+Follow [this instruction](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/?=mailchimp#mailchimp-endpoint) to get the endpoint value.
 
-Import your site in Netlify
+## Crucial Commands
 
-1. Create a new site in Netlify and import your repository.
-2. Set the build command to: `gridsome build`
-3. Set the publish directory to: `dist`
+This project comes with a few handy commands for linting and code fixing. The most important ones are the ones to develop and ship code. You can find the most important commands below.
 
-That's it, now your site gets deployed automatically on `git push` or when saving documents from Forestry.
+#### `gatsby develop`
+
+Run in the project locally.
+
+#### `gatsby build`
+
+Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
