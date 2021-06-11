@@ -9,7 +9,7 @@
 
 <page-query>
 query ProjectPost {
-  post: projectPost (path: "/projects/3d-graff/") {
+  post: projectPost (path: "/projects/how-the-forest-was-born/") {
     title
     date (format: "YYYY")
     content
