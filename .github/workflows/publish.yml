@@ -31,14 +31,14 @@ jobs:
       - name: Install NPM
         run: npm install
         
-      - name: Install Gridsome
-        run: npm install --global @gridsome/cli
+      - name: Install CMS
+        run: npm install -g gatsby-cli
 
       - name: Open directory
         run: cd $GITHUB_WORKSPACE
 
-      - name: Build Gridsome
-        run: gridsome build
+      - name: Build CMS
+        run: gatsby build
         
 #       - name: Sync files
 #         uses: SamKirkland/FTP-Deploy-Action@4.0.0
